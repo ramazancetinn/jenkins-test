@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "rm -r argocd-test-deploy"
+                sh "rm -r argo-test-deploy"
                 sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
               dir("argocd-demo-deploy"){
                 sh "ls -la"
