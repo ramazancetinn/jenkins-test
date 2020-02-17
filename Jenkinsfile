@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              sh "uname -a"
-              sh "cd $HOME"
-              sh "ls -la"
+                sh "rm -r argocd-demo-deploy"
+                sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
               dir("argocd-demo-deploy"){
                 sh "ls -la"
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:latest"
