@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              sh "lsb_release -a "
+              sh "uname -a"
               sh "git config --global user.email 'ci@ci.com'"
               dir("argocd-demo-deploy"){
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:latest"
