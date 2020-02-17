@@ -5,7 +5,6 @@ pipeline {
             steps {
                 sh "cd ~"
                 sh "ls -la"
-                sh "rm -r argo-test-deploy"
                 sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
               dir("argo-test-deploy"){
                 sh "ls -la"
