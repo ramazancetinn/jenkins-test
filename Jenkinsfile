@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
               sh "lsb_release -a "
               sh "git config --global user.email 'ci@ci.com'"
               dir("argocd-demo-deploy"){
