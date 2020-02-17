@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'argoproj/argo-cd-ci-builder:v0.13.1' } }
+    agent { docker { image 'argoproj/argo-cd-ci-builder:v1.0.1' } }
     stages {
         stage('build') {
             steps {
