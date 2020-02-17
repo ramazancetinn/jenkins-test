@@ -8,6 +8,7 @@ pipeline {
               dir("argo-test-deploy"){
                 sh "ls -la"
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:latest"
+                sh "git config --global user.email 'kentkart@ci.com'"
                 sh "git commit -am 'Publish new version' && git push || echo 'no changes'"
               }
             }
