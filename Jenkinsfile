@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
               sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
-              sh "ls"
+              sh "lsb_release -a"
               sh "git config --global user.email 'ci@ci.com'"
               dir("argocd-demo-deploy"){
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:latest"
