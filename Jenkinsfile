@@ -11,6 +11,7 @@ pipeline {
               dir("argo-test-deploy"){
                 sh "ls -la"
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:latest"
+                sh "git remote add origin https://github.com/ramazancetinn/argo-test-deploy.git"
                 sh "git commit -am 'Publish new version' && git push origin master || echo 'no changes'"
               }
             }
