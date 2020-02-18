@@ -14,7 +14,7 @@ pipeline {
               dir("argo-test-deploy"){
                 sh "ls -la"
                 sh "cd ./prod && kustomize edit set image ramazancetinn/hellonode:8"
-                withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: $GIT_CREDS_PSW, usernameVariable: $GIT_CREDS_USR)]) {
+                withCredentials("git") {
                     sh("git commit -am 'Publish new version' && git push https://github.com/ramazancetinn/argo-test-deploy.git")
                 }
               }
