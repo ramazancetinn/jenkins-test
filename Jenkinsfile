@@ -6,6 +6,7 @@ pipeline {
                 GIT_CREDS = credentials('git')
             }
             steps {
+                sh "echo $GIT_CREDS"
                 sh "rm -rf argo-test-deploy || true"
                 sh "git config --global user.name 'kentkart@ci.com'"
                 sh "git config --global user.email 'kentkart@ci.com'"
