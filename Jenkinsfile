@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh "rm -rf argo-test-deploy || true"
-                sh "rm -rf .git"
-                sh "mkdir ~/.git"
+                sh "rm -rf .git || true"
+                sh "mkdir $HOME/.git"
                 sh "git config --global user.email 'kentkart@ci.com'"
                 sh "git clone https://github.com/ramazancetinn/argo-test-deploy.git"
               dir("argo-test-deploy"){
